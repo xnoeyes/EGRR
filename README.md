@@ -106,7 +106,7 @@ The project supports ablation experiments by selectively removing evidence compo
 ## System Pipeline
 
 <p align="center">
-  <img src="images/image01.png" width="800">
+  <img src="images/image01.png" width="500">
 </p>
 
 <p align="center">
