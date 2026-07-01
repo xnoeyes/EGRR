@@ -36,17 +36,19 @@ The datasets used or referred to in this project are listed below.
 
 ### Evidence Builder
 
-The Evidence Builder converts object detection results into structured textual evidence.
+The Evidence Builder converts object detection results into structured textual evidence.  
+It summarizes object categories, bounding box positions, object counts, and ego-vehicle-relative distance information.
 
-It includes:
+<p align="center">
+  <img src="images/2.png" width="650">
+</p>
 
-* Object category
-* Bounding box position
-* Object count
-* Ego-vehicle-relative distance
-* Distance-prioritized object information
+<p align="center">
+  <em>Figure 2. Evidence Builder and CoT-based risk reasoning process.</em>
+</p>
 
-This allows the VLM to reason with explicit object-level evidence instead of relying only on image-level visual understanding.
+The generated evidence helps the VLM focus on decision-critical objects such as pedestrians, vehicles, traffic signs, and two-wheel vehicles.  
+By combining visual input with structured evidence, the model can produce more grounded and explainable risk reasoning.
 
 ---
 
