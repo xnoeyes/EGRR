@@ -3,14 +3,10 @@
 > 자율주행 위험 판단을 위한 증거 기반 설명형 추론 프레임워크입니다.
 
 ```text
-This repository is a workspace for Evidence-Guided Risk Reasoning in autonomous driving scenes.
-The system predicts road-scene risk levels while providing object-level evidence and natural-language reasoning.
-```
-
 본 프로젝트는 도로 주행 장면 이미지와 객체 탐지 기반 증거를 함께 활용하여, 자율주행 상황의 위험도를 판단하고 그 근거를 설명하는 Vision-Language 기반 위험 추론 시스템입니다.
-
 기존의 위험도 분류 방식은 최종 위험 등급만 예측하는 경우가 많아, 어떤 객체와 장면 요소가 판단에 영향을 주었는지 설명하기 어렵습니다.
 본 프로젝트에서는 YOLO 기반 객체 탐지 결과와 거리 정보를 구조화된 evidence로 변환하고, 이를 VLM 입력에 함께 제공하여 모델이 이미지뿐 아니라 명시적인 객체 수준 근거를 참고하도록 설계했습니다.
+```
 
 ---
 
