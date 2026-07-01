@@ -1,7 +1,5 @@
 # EGRR :  Evidence-Guided Risk Reasoning for Explainable Autonomous Driving 
 
-# EGRR: Evidence-Guided Risk Reasoner
-
 > 자율주행 위험 판단을 위한 증거 기반 설명형 추론 프레임워크입니다.
 
 ```text
@@ -33,69 +31,8 @@ The datasets used or referred to in this project are listed below.
 | Name                      | Description                                |
 | ------------------------- | ------------------------------------------ |
 | AI Hub 생활도로 객체인식 자율주행 데이터 | 생활도로 주행 장면 이미지, 객체 라벨, LiDAR 기반 좌표 및 거리 정보 |
-| Risk Label CSV            | 이미지별 위험도 등급 및 위험 설명 라벨                     |
-| Object Evidence JSON      | YOLO 기반 객체 탐지 결과와 거리 정보를 정리한 구조화 증거        |
-
----
-
-## Dataset Structure
-
-```text
-datasets/
-├── image_sampled/
-│   ├── *.jpg / *.png
-│
-├── risk_label_0210.csv
-│
-outputs/
-├── dist_from_yolo8s/
-│   ├── result_json/
-│   │   ├── *.json
-│
-ckpts/
-├── no_dis/
-│   ├── final/
-│   ├── pred_cot_json/
-│   ├── pred_cot.jsonl
-│   ├── pred_cot_steps/
-```
-
----
-
-## Development Environment
-
-### Deep Learning
-
-* Framework: **PyTorch**
-* Model Training: **Transformers Trainer**
-* Efficient Fine-tuning: **QLoRA / LoRA**
-* Quantization: **BitsAndBytes 4bit**
-
-### Models
-
-| Component           | Model                                             |
-| ------------------- | ------------------------------------------------- |
-| Object Detection    | YOLOv8s / YOLOv11s                                |
-| CoT Data Generation | Qwen3-VL-8B-Instruct                              |
-| Risk Reasoning VLM  | Qwen2-VL-7B-Instruct                              |
-| Comparison Models   | LLaVA1.6-Mistral-7B, Llama3.2-11B-Vision-Instruct |
-
-### Training Setting
-
-| Item                  | Value                |
-| --------------------- | -------------------- |
-| Base Model            | Qwen2-VL-7B-Instruct |
-| Fine-tuning Method    | 4bit QLoRA           |
-| LoRA Rank             | 16                   |
-| LoRA Alpha            | 32                   |
-| LoRA Dropout          | 0.05                 |
-| Epochs                | 2                    |
-| Learning Rate         | 2e-4                 |
-| Batch Size            | 1                    |
-| Gradient Accumulation | 8                    |
-| Max Length            | 4096                 |
-| Max Objects           | 64                   |
-| Validation Ratio      | 0.05                 |
+| Risk Label            | 이미지별 위험도 등급 및 위험 설명 라벨                     |
+| Object Evidence    | YOLO 기반 객체 탐지 결과와 거리 정보를 정리한 구조화 증거        |
 
 ---
 
@@ -319,7 +256,6 @@ M
 
 * 현재는 단일 이미지 프레임 기반 위험 판단이므로 연속 프레임 기반 temporal reasoning 확장이 필요함
 * 객체 탐지 결과의 오류가 Evidence Builder를 거쳐 위험 판단에 영향을 줄 수 있음
-* CoT-style reasoning은 외부 VLM이 생성한 중간 추론 데이터를 학습 신호로 사용하므로 표현 편향이 발생할 수 있음
 * 비, 야간, 역광, 복잡한 교차로 등 다양한 실제 주행 조건에 대한 추가 평가가 필요함
 * 향후 영상 입력, LiDAR point cloud, HD Map 등 멀티모달 센서 정보와의 통합이 필요함
 * 위험도 판단을 넘어 감속, 정지, 차선 변경 회피 등 주행 행동 제안으로 확장 가능함
