@@ -90,21 +90,6 @@ This structure helps the model connect observed evidence to the final risk decis
 
 ---
 
-### Ablation Experiment Support
-
-The project supports ablation experiments by selectively removing evidence components.
-
-| Setting      | Description                                                 |
-| ------------ | ----------------------------------------------------------- |
-| EGRR         | Full framework with object evidence and CoT-style reasoning |
-| w/o Evidence | Removes structured object evidence                          |
-| w/o CoT      | Removes intermediate reasoning steps                        |
-| w/o BBox     | Removes bounding box information                            |
-| w/o Distance | Removes ego-relative distance information                   |
-| w/o Count    | Removes object count information                            |
-
----
-
 ## System Pipeline
 
 <p align="center">
@@ -119,80 +104,6 @@ The proposed framework first detects road objects from the input driving scene i
 The image and evidence are then jointly provided to the Vision-Language Model, which performs CoT-style reasoning and predicts the final risk level with a natural-language explanation.
 
 ---
-
-## Model Experiments & Results
-
-### 1. Object Detector Comparison
-
-YOLOv8s and YOLOv11s were compared as object detection modules for the Evidence Builder.
-
-| Detector | Precision | Recall | mAP50 | mAP50-95 |
-| -------- | --------- | ------ | ----- | -------- |
-| YOLOv8s  | 0.77      | 0.68   | 0.73  | 0.52     |
-| YOLOv11s | 0.77      | 0.69   | 0.74  | 0.55     |
-
-YOLOv11s showed slightly better recall and mAP, and was used as the main detector for the risk reasoning experiments.
-
----
-
-### 2. VLM Backbone Comparison
-
-The proposed framework was evaluated with multiple VLM backbones.
-
-| Model                        | BLEU   | METEOR | ROUGE-L | CIDEr | SPICE | BERTScore-F1 | Acc   | Macro-F1 | MAE   |
-| ---------------------------- | ------ | ------ | ------- | ----- | ----- | ------------ | ----- | -------- | ----- |
-| LLaVA1.6-Mistral-7B          | 75.281 | 0.769  | 0.837   | 6.574 | 0.776 | 0.943        | 0.786 | 0.720    | 0.285 |
-| Llama3.2-11B-Vision-Instruct | 77.546 | 0.819  | 0.900   | 7.429 | 0.844 | 0.969        | 0.801 | 0.735    | 0.254 |
-| Qwen2-VL-7B-Instruct         | 78.590 | 0.827  | 0.899   | 7.514 | 0.847 | 0.965        | 0.855 | 0.818    | 0.230 |
-
-Qwen2-VL-7B-Instruct achieved the best overall balance between risk description generation and risk grade prediction.
-
----
-
-### 3. Component Ablation Results
-
-The contribution of Evidence Builder and CoT-style reasoning was analyzed through ablation experiments.
-
-| Model Setting | BLEU   | METEOR | ROUGE-L | CIDEr | SPICE | BERTScore-F1 | Acc   | Macro-F1 | MAE   |
-| ------------- | ------ | ------ | ------- | ----- | ----- | ------------ | ----- | -------- | ----- |
-| w/o Evidence  | 63.312 | 0.669  | 0.808   | 5.758 | 0.699 | 0.935        | 0.669 | 0.491    | 0.492 |
-| w/o CoT       | 78.601 | 0.834  | 0.903   | 7.552 | 0.853 | 0.967        | 0.752 | 0.668    | 0.247 |
-| EGRR          | 78.590 | 0.827  | 0.899   | 7.514 | 0.847 | 0.965        | 0.855 | 0.818    | 0.230 |
-
-The results show that structured object evidence is crucial for both risk explanation and risk prediction.
-CoT-style reasoning contributes especially to the stability and consistency of final risk grade prediction.
-
----
-
-### 4. Evidence Component Analysis
-
-The contribution of each structured evidence component was further analyzed.
-
-| Setting      | Acc   | Macro-F1 | MAE   |
-| ------------ | ----- | -------- | ----- |
-| w/o BBox     | 0.794 | 0.709    | 0.243 |
-| w/o Distance | 0.789 | 0.726    | 0.263 |
-| w/o Count    | 0.802 | 0.754    | 0.270 |
-| EGRR         | 0.855 | 0.818    | 0.230 |
-
-* Removing bounding box information caused a large drop in Macro-F1.
-* Removing distance information caused a large drop in Accuracy.
-* Removing object count increased MAE, indicating that object density helps adjust risk severity.
-
----
-
-### 5. Qualitative Results
-
-<p align="center">
-  <img src="images/image03.png" width="600">
-</p>
-
-<p align="center">
-  <em>Figure 3. Qualitative examples of CoT-based risk reasoning results.</em>
-</p>
-
-The qualitative results show that EGRR predicts the final risk grade while providing intermediate reasoning steps.  
-For each road scene, the model identifies decision-critical objects, describes the factual scene context, and generates a concise risk explanation.
 
 ## Output Example
 
@@ -212,6 +123,21 @@ M
 [Risk]
 전방 차량과 주변 보행자 가능성으로 인해 주행 중 감속 및 주의가 필요한 상황이다.
 ```
+
+---
+
+## Reasoning Example
+
+<p align="center">
+  <img src="images/image03.png" width="600">
+</p>
+
+<p align="center">
+  <em>Figure 3. Examples of CoT-based risk reasoning outputs.</em>
+</p>
+
+The examples show how EGRR connects object-level evidence with the final risk decision.  
+For each road scene, the model identifies decision-critical objects, describes the factual scene context, and generates a concise risk explanation.
 
 ---
 
