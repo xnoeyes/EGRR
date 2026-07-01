@@ -181,6 +181,19 @@ The contribution of each structured evidence component was further analyzed.
 
 ---
 
+### 5. Qualitative Results
+
+<p align="center">
+  <img src="images/image03.png" width="500">
+</p>
+
+<p align="center">
+  <em>Figure 3. Qualitative examples of CoT-based risk reasoning results.</em>
+</p>
+
+The qualitative results show that EGRR predicts the final risk grade while providing intermediate reasoning steps.  
+For each road scene, the model identifies decision-critical objects, describes the factual scene context, and generates a concise risk explanation.
+
 ## Output Example
 
 ```text
