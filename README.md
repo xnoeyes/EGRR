@@ -40,7 +40,7 @@ The Evidence Builder converts object detection results into structured textual e
 It summarizes object categories, bounding box positions, object counts, and ego-vehicle-relative distance information.
 
 <p align="center">
-  <img src="images/2.png" width="650">
+  <img src="images/image02.png" width="500">
 </p>
 
 <p align="center">
