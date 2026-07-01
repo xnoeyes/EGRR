@@ -105,32 +105,16 @@ The project supports ablation experiments by selectively removing evidence compo
 
 ## System Pipeline
 
-```text
-Road Scene Image
-        │
-        ▼
-YOLO Object Detection
-        │
-        ▼
-Object Evidence JSON
-        │
-        ▼
-Evidence Builder
-        │
-        ▼
-Image + Structured Evidence
-        │
-        ▼
-Vision-Language Model Fine-tuning
-        │
-        ▼
-CoT-style Risk Reasoning
-        │
-        ├── Decision-Critical Objects
-        ├── Factual Scene Description
-        ├── Risk Grade
-        └── Risk Explanation
-```
+<p align="center">
+  <img src="images/1.png" width="800">
+</p>
+
+<p align="center">
+  <em>Figure 1. Overall architecture of the proposed EGRR framework.</em>
+</p>
+
+The proposed framework first detects road objects from the input driving scene image and converts the detection results into structured object-level evidence.  
+The image and evidence are then jointly provided to the Vision-Language Model, which performs CoT-style reasoning and predicts the final risk level with a natural-language explanation.
 
 ---
 
