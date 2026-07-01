@@ -40,7 +40,7 @@ The Evidence Builder converts object detection results into structured textual e
 It summarizes object categories, bounding box positions, object counts, and ego-vehicle-relative distance information.
 
 <p align="center">
-  <img src="images/image02.png" width="500">
+  <img src="images/image02.png" width="600">
 </p>
 
 <p align="center">
@@ -108,7 +108,7 @@ The project supports ablation experiments by selectively removing evidence compo
 ## System Pipeline
 
 <p align="center">
-  <img src="images/image01.png" width="500">
+  <img src="images/image01.png" width="600">
 </p>
 
 <p align="center">
@@ -184,7 +184,7 @@ The contribution of each structured evidence component was further analyzed.
 ### 5. Qualitative Results
 
 <p align="center">
-  <img src="images/image03.png" width="500">
+  <img src="images/image03.png" width="600">
 </p>
 
 <p align="center">
