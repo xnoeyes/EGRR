@@ -156,10 +156,10 @@ For each road scene, the model identifies decision-critical objects, describes t
 
 ## Limitations & Future Work
 
-* 현재는 단일 이미지 프레임 기반 위험 판단이므로 연속 프레임 기반 temporal reasoning 확장이 필요함
-* 객체 탐지 결과의 오류가 Evidence Builder를 거쳐 위험 판단에 영향을 줄 수 있음
-* 비, 야간, 역광, 복잡한 교차로 등 다양한 실제 주행 조건에 대한 추가 평가가 필요함
-* 향후 영상 입력, LiDAR point cloud, HD Map 등 멀티모달 센서 정보와의 통합이 필요함
-* 위험도 판단을 넘어 감속, 정지, 차선 변경 회피 등 주행 행동 제안으로 확장 가능함
+* Since the current framework performs risk assessment based on a single image frame, it should be extended to temporal reasoning using consecutive frames.
+* Errors in object detection results may propagate through the Evidence Builder and affect the final risk judgment.
+* Additional evaluation is needed under diverse real-world driving conditions, such as rain, night scenes, backlight, and complex intersections.
+* Future work should integrate multimodal sensor information such as video input, LiDAR point clouds, and HD maps.
+* The framework can be extended beyond risk-level prediction to driving action suggestions, such as slowing down, stopping, or avoiding lane changes.
 
 ---
