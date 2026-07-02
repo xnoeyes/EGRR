@@ -157,10 +157,6 @@ For each road scene, the model identifies decision-critical objects, describes t
 
   * AI Hub 생활도로 데이터를 기반으로 위험도 등급 및 위험 설명 학습 데이터 구성
 
-* **VLM Fine-tuning**
-
-  * Qwen2-VL-7B-Instruct 모델을 4bit QLoRA 방식으로 fine-tuning
-
 * **CoT-style Reasoning Format Design**
 
   * Decision-Critical Objects, Factual Scene Description, Risk Grade, Risk Explanation으로 구성된 출력 형식 설계
