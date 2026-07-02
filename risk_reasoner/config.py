@@ -24,7 +24,7 @@ JSON_DIR   = _env_path("RISKREASONER_JSON_DIR", "outputs/______")
 IMAGE_DIR  = _env_path("RISKREASONER_IMAGE_DIR", "datasets/______")
 OUTPUT_DIR = _env_path("RISKREASONER_OUTPUT_DIR", "ckpts/______")
 
-MODEL_NAME = os.environ.get("RISKREASONER_MODEL_NAME", "Qwen/Qwen2-VL-7B-Instruct")
+MODEL_NAME = os.environ.get("RISKREASONER_MODEL_NAME", "______")
 TRUST_REMOTE_CODE = True
 
 # Ablation flags (evidence 필드 on/off)
