@@ -24,11 +24,11 @@
 
 The datasets used or referred to in this project are listed below.
 
-| Name                      | Description                                |
-| ------------------------- | ------------------------------------------ |
-| AI Hub 생활도로 객체인식 자율주행 데이터 | 생활도로 주행 장면 이미지, 객체 라벨, LiDAR 기반 좌표 및 거리 정보 |
-| Risk Label            | 이미지별 위험도 등급 및 위험 설명 라벨                     |
-| Object Evidence    | YOLO 기반 객체 탐지 결과와 거리 정보를 정리한 구조화 증거        |
+| Name | Source | Description |
+|------|--------|-------------|
+| [AI Hub 생활도로 객체인식 자율주행 데이터](https://www.aihub.or.kr/aihubdata/data/view.do?srchOptnCnd=OPTNCND001&currMenu=115&topMenu=100&searchKeyword=%EC%A3%BC%ED%96%89&aihubDataSe=data&dataSetSn=71784) | AI Hub | 생활도로 주행 장면 이미지, 객체 라벨, LiDAR 기반 좌표 및 거리 정보 |
+| Risk Label | Custom-built | AI Hub 데이터를 기반으로 자체 구축한 이미지별 위험도 등급 및 위험 설명 라벨 |
+| Object Evidence | Custom-generated | YOLO 기반 객체 탐지 결과와 거리 정보를 변환하여 자체 생성한 구조화 증거 |
 
 ---
 
@@ -44,7 +44,7 @@ It summarizes object categories, bounding box positions, object counts, and ego-
 </p>
 
 <p align="center">
-  <em>Figure 2. Evidence Builder and CoT-based risk reasoning process.</em>
+  <em>Figure 1. Evidence Builder and CoT-based risk reasoning process.</em>
 </p>
 
 The generated evidence helps the VLM focus on decision-critical objects such as pedestrians, vehicles, traffic signs, and two-wheel vehicles.  
@@ -97,7 +97,7 @@ This structure helps the model connect observed evidence to the final risk decis
 </p>
 
 <p align="center">
-  <em>Figure 1. Overall architecture of the proposed EGRR framework.</em>
+  <em>Figure 2. Overall architecture of the proposed EGRR framework.</em>
 </p>
 
 The proposed framework first detects road objects from the input driving scene image and converts the detection results into structured object-level evidence.  
