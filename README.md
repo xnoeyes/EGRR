@@ -145,30 +145,13 @@ For each road scene, the model identifies decision-critical objects, describes t
 
 ## My Contributions
 
-* **Research Framework Design**
-
-  * 자율주행 위험 판단을 위한 Evidence-Guided Risk Reasoning 프레임워크 설계
-
-* **Evidence Builder Design**
-
-  * YOLO 기반 객체 탐지 결과와 LiDAR 기반 거리 정보를 구조화된 텍스트 evidence로 변환
-
-* **Risk Labeling & Dataset Construction**
-
-  * AI Hub 생활도로 데이터를 기반으로 위험도 등급 및 위험 설명 학습 데이터 구성
-
-* **CoT-style Reasoning Format Design**
-
-  * Decision-Critical Objects, Factual Scene Description, Risk Grade, Risk Explanation으로 구성된 출력 형식 설계
-
-* **Ablation Experiments**
-
-  * Evidence, CoT, bounding box, distance, object count 요소별 제거 실험 수행
-
-* **Evaluation & Analysis**
-
-  * Accuracy, Macro-F1, MAE와 BLEU, ROUGE-L, METEOR, CIDEr, SPICE, BERTScore 기반 성능 분석
-
+* Research Framework Design
+* Evidence Builder Design
+* Risk Labeling & Dataset Construction
+* CoT-style Reasoning Format Design
+* Ablation Experiments
+* Evaluation & Analysis
+  
 ---
 
 ## Limitations & Future Work
