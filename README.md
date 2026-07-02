@@ -27,8 +27,10 @@ The datasets used or referred to in this project are listed below.
 | Name | Source | Description |
 |------|--------|-------------|
 | [AI Hub 생활도로 객체인식 자율주행 데이터](https://www.aihub.or.kr/aihubdata/data/view.do?srchOptnCnd=OPTNCND001&currMenu=115&topMenu=100&searchKeyword=%EC%A3%BC%ED%96%89&aihubDataSe=data&dataSetSn=71784) | AI Hub | 생활도로 주행 장면 이미지, 객체 라벨, LiDAR 기반 좌표 및 거리 정보 |
-| Risk Label | Custom-built | AI Hub 데이터를 기반으로 자체 구축한 이미지별 위험도 등급 및 위험 설명 라벨 |
-| Object Evidence | Custom-generated | YOLO 기반 객체 탐지 결과와 거리 정보를 변환하여 자체 생성한 구조화 증거 |
+| [EGRR Risk Data](https://drive.google.com/drive/folders/1CafB0KGNFN569KQLjK8ZdqqbBGk2ezo-?usp=drive_link) | 자체 구축 / 자체 생성 | 이미지별 위험도 등급, 위험 설명 라벨, YOLO 기반 구조화 객체 증거 |
+
+> Raw image data is not redistributed in this repository.  
+> Please download the original driving scene data from AI Hub and use the provided EGRR Risk Data for risk reasoning experiments.
 
 ---
 
